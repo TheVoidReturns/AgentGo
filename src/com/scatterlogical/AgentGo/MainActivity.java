@@ -13,5 +13,7 @@ public class MainActivity extends Activity
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+		TextView uppererDaterer = (TextView) findViewById(R.id.textviewforupdates);
+		uppererDaterer.setText("Launching game activity...");		
     }
 }
