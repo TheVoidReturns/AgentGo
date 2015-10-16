@@ -1,43 +1,51 @@
 package com.scatterlogical.AgentGo;
 
+import android.content.Context;
+import android.media.MediaPlayer;
+
 public class SimpleMusicPlayer implements iMusicPlayer
 {
+    MediaPlayer mediaPlayer;
 	String [] allMusicToPlay;
 	String [] allPowerMusicToPlay;
-	public SimpleMusicPlayer(){
+    boolean running;
+    boolean playing;
+
+	public SimpleMusicPlayer(Context context){
 		allMusicToPlay = new String[] {"bvtwtest.mp3"};
-		
+        mediaPlayer = MediaPlayer.create(context, R.raw.bvtwtest);
+        running = true;
 	}
 	@Override
 	public Boolean isRunning()
 	{
-		// TODO: Implement this method
-		return null;
+		return running;
 	}
 
 	@Override
 	public Boolean isPlaying()
 	{
-		// TODO: Implement this method
-		return null;
+		return playing;
 	}
 
 	@Override
 	public void Play()
 	{
-		// TODO: Implement this method
+        if (running)
+            mediaPlayer.start();
 	}
 
 	@Override
 	public void Pause()
 	{
-		// TODO: Implement this method
+		if (playing)
+            mediaPlayer.pause();
 	}
 
 	@Override
 	public void Stop()
 	{
-		// TODO: Implement this method
+		mediaPlayer.stop();
 	}
 
 	@Override

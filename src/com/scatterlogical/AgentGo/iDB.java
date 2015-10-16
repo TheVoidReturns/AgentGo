@@ -2,7 +2,7 @@ package com.scatterlogical.AgentGo;
 
 public interface iDB
 {
-	int lastIndexCommitted;
+	int lastIndexCommitted = 0;
 	
 	void initialise();
 	void finalise();
